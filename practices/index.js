@@ -1,5 +1,4 @@
-import {topla, cikar, carp} from "./myModule.js";
+import getData from "./app.js";
 
-console.log("TOPLAMA İŞLEMİ SONUCU : " + (topla(289,14)));
-console.log("ÇIKARMA İŞLEMİ SONUCU : " + (cikar(289,14)));
-console.log("ÇARPMA İŞLEMİ SONUCU : " + (carp(25,14)));
+
+getData(1);

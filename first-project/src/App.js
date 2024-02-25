@@ -10,7 +10,7 @@ return (
     <h2 className="text-3xl text-center pt-20">İnternet Sitesine Hoşgeldiniz</h2>
     <h4 className="text-2xl pt-20 text-center">KULLANICILAR</h4>
     <User 
-        name="yusuf" 
+        name="yusuf"
         surname="damar" 
         age={32} 
         job="Yazılımcı"

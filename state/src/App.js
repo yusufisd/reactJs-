@@ -3,21 +3,21 @@ import {useState} from "react";
 function App() {
   const [sayac, setSayac] = useState(0);
   const [alert, setAlert] = useState("");
+  const [logs, setLogs] = useState([0]);
+
   const deneme = (type) => {
-    let lastVal = sayac;
     if(type == 0){
-      lastVal -= 1;
-    }else{
-      lastVal += 1;
-    }
+      if(sayac > 0){
+        setSayac(sayac-1);
+        setLogs([...logs,sayac-1]);
 
-    if(lastVal < 0){
-      setAlert("sayaç 0'dan küçük değer olamaz.")
+      }else{
+        setAlert("Sayaç 0'dan küçük olamaz");
+      }
     }else{
-      setSayac(lastVal)
-      setAlert("")
+      setSayac(sayac+1);
+      setLogs([...logs,sayac+1]);
     }
-
   }
   return (
     <div className="items-center mt-40 flex flex-col ml-20">
@@ -28,6 +28,10 @@ function App() {
           <button onClick={() => deneme(1)} className="border p-2 bg-black text-white rounded-lg">Arttır (+)</button>
         </div>
         <p>{alert}</p>
+        <h4 className="text-sm mt-10">İşlem geçmişi:</h4>
+        {
+          logs.map(log => log+" ")
+        }
     </div>
   );
 }
